@@ -1,4 +1,5 @@
-﻿using System.Threading.Channels;
+﻿using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 
 namespace PPhenrikkimthomas;
 
@@ -15,28 +16,44 @@ public class Shop
 
     public void ShopMenu(HarryPotterCharacter Harry)
     {
-        Console.WriteLine("Welcome to the shop");
-        Console.WriteLine("1. buy pet");
-        Console.WriteLine("2. buy wand");
-        string input = Console.ReadLine();
-
-        foreach (var item in shopItems)
+        bool x = true;
+        while (x)
         {
-            if (item is Animal animal && input == "1")
+            Console.Clear();
+            Console.WriteLine("Welcome to the shop");
+            Console.WriteLine("1. buy pet");
+            Console.WriteLine("2. buy wand");
+            Console.WriteLine("Q. Quit");
+            string input = Console.ReadLine();
+
+            foreach (var item in shopItems)
             {
-                animal.PrintInfo();
+                if (item is Animal animal && input == "1")
+                {
+                    animal.PrintInfo();
+                }
+                else if (item is Wand wand && input == "2")
+                {
+                    wand.PrintInfo();
+                }
+
             }
-            else if (item is Wand wand && input == "2")
+
+            string choise = "";
+            Console.WriteLine("Choose by Name");
+            choise = Console.ReadLine();
+
+            Harry.inventorie.Add(shopItems.Find(s => s.ItemName == choise));
+
+            Console.WriteLine("do you need anything else? Y/N");
+            string ans = Console.ReadLine();
+
+            if (ans == "N" || ans == "n")
             {
-                wand.PrintInfo();
+                x = false;
             }
+
         }
-
-         string choise = "";
-        Console.WriteLine("Choose by Name");
-        choise = Console.ReadLine();
-
-        Harry.inventorie.Add(shopItems.Find(s => s.ItemName == choise)); 
     }
 
 

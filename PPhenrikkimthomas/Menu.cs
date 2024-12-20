@@ -12,6 +12,7 @@ public class Menu
     {
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("Welcome");
             Console.WriteLine("1. Character Info");
             Console.WriteLine("2. Shop");

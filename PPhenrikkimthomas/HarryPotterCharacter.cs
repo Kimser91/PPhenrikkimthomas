@@ -22,12 +22,6 @@ public class HarryPotterCharacter
         Console.WriteLine($"Name: {_name} " +
                           $"House: {_house}");
 
-        foreach (Inventory inv in inventorie)
-        {
-            Console.WriteLine($"Item name: {inv.ItemName}\n" +
-                              $"Price: {inv.Price}" +
-                              $"Type: {inv.Type}");
-        }
         Console.WriteLine();
         PrintInventory();
     }
@@ -55,6 +49,13 @@ public class HarryPotterCharacter
     }
     public void PrintInventory()
     {
-        foreach (Inventory inv in inventorie) { Console.WriteLine(inv.ItemName); }
+        foreach (Inventory inv in inventorie)
+        {
+            Console.WriteLine($"Name: {inv.ItemName} Type: {inv.Type}");
+            Console.WriteLine();
+
+        }
+
+        Console.ReadKey();
     }
 }
