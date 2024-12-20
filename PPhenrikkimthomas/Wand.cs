@@ -12,6 +12,7 @@ public class Wand : Inventory
 
     public void PrintInfo()
     {
-        Console.WriteLine($"Magic Power: {_magicPowe}\nMana: {_mana}");
+        Console.WriteLine($"Name: {_itemName}");
+        Console.WriteLine($"Magic Power: {_magicPowe} Mana: {_mana}");
     }
 }

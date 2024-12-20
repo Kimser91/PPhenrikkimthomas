@@ -4,24 +4,23 @@ public class HarryPotterCharacter
 {
     private string _name, _house;
 
-    public string Name
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
 
-    public string House
-    {
-        get { return _house; }
-        set { _house = value; }
-    }
 
     private List<Inventory> inventorie = new List<Inventory>();
 
+    public HarryPotterCharacter()
+    {
+        
+    }
+    public HarryPotterCharacter(string name, string house)
+    {
+        _name = name;
+        _house = house;
+    }
     public void printInfo()
     {
-        Console.WriteLine($"Name: {_name}\n" +
-                          $"House: {_house}\n");
+        Console.WriteLine($"Name: {_name} " +
+                          $"House: {_house}");
 
         foreach (Inventory inv in inventorie)
         {

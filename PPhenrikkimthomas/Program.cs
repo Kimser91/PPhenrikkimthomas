@@ -1,8 +1,3 @@
-﻿class Program
-{
+﻿using PPhenrikkimthomas;
 
-    static void Main()
-    {
-        Console.WriteLine("Hello");
-    }
-}
+    var Prog = new Menu();
