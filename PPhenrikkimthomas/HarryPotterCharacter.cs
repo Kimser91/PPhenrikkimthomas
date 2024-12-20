@@ -6,7 +6,7 @@ public class HarryPotterCharacter
 
 
 
-    private List<Inventory> inventorie = new List<Inventory>();
+    public List<Inventory> inventorie = new List<Inventory>();
 
     public HarryPotterCharacter()
     {
@@ -28,5 +28,33 @@ public class HarryPotterCharacter
                               $"Price: {inv.Price}" +
                               $"Type: {inv.Type}");
         }
+        Console.WriteLine();
+        PrintInventory();
+    }
+    public void DoSpell()
+    {
+        Console.WriteLine("Write the correct incantation!");
+        Console.WriteLine("Spells: Vingardium Leviosa and Hookus Pookus");
+        Console.WriteLine("Or write Back to go BACK ");
+        var input = Console.ReadLine();
+        switch (input)
+        {
+            case "Hookus Pookus":
+                Console.WriteLine("Fireworks shot up into the air! Yay!");
+                break;
+            case "Vingardium Leviosa":
+                Console.WriteLine("You made a feather float...congrats.");
+                break;
+            case "Back":
+                return;
+            default:
+                Console.WriteLine("That's not a spell, stupid.");
+                break;
+
+        }
+    }
+    public void PrintInventory()
+    {
+        foreach (Inventory inv in inventorie) { Console.WriteLine(inv.ItemName); }
     }
 }

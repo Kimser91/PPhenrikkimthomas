@@ -28,7 +28,7 @@ public class Menu
                    shop.ShopMenu(Harry);
                     break;
                 case "3":
-                    Console.WriteLine();
+                    Harry.DoSpell();
                     break;
                 case "Q":
                     Environment.Exit(0);
